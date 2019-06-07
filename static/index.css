@@ -1,0 +1,24 @@
+#container{
+    text-align: center;
+    width: 75%;
+    margin: 5% auto;
+}
+
+#home{
+    width: 33%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table input[type=text]{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+table input[type=text]::placeholder{
+    text-align: center;
+}
+
+table tr td{
+    width: 33%;
+}
