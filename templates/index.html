@@ -15,7 +15,7 @@
 <body>
 <div id="container">
     <h5 id="home">
-        <a href="">
+        <a href="/">
             <div style="display: flex; flex-direction: column">
                 <span><i class="fa fa-fw fa-lg fa-home"></i></span>
                 <span>Back To Start</span>
@@ -26,27 +26,59 @@
         <tr>
             <td></td>
             <td>
-                <input id="path0" class="form-control" type="text" placeholder="Enter Path 1 Story">
-                <input type="submit" class="btn btn-outline-primary">
+                {% if path1 %}
+                    <a href="/story/{{ path1 }}">{{ path1_sentence }}</a>
+                {% else %}
+                    <form action="/create_story" method="POST">
+                        <input type="hidden" name="path" value="1">
+                        <input type ="hidden" name="current_story_id" value="{{ current_story_id }}">
+                        <input id="path1" name="sentence" class="form-control" type="text" placeholder="Enter Path 1 Story">
+                        <input type="submit" class="btn btn-outline-primary">
+                    </form>
+                {% endif %}
             </td>
             <td></td>
         </tr>
         <tr>
             <td>
-                <input id="path1" class="form-control" type="text" placeholder="Enter Path 4 Story">
-                <input type="submit" class="btn btn-outline-primary">
+                {% if path4 %}
+                    <a href="/story/{{ path4 }}">{{ path4_sentence }}</a>
+                {% else %}
+                    <form action="/create_story" method="POST">
+                        <input type="hidden" name="path" value="4">
+                        <input type ="hidden" name="current_story_id" value="{{ current_story_id }}">
+                        <input id="path4" name="sentence" class="form-control" type="text" placeholder="Enter Path 4 Story">
+                        <input type="submit" class="btn btn-outline-primary">
+                    </form>
+                {% endif %}
             </td>
-            <td style="vertical-align: middle"><h5 id="story">{{ name }}</h5></td>
+            <td style="vertical-align: middle"><h5 id="story">{{ story.sentence }}</h5></td>
             <td>
-                <input id="path2" class="form-control" type="text" placeholder="Enter Path 2 Story">
-                <input type="submit" class="btn btn-outline-primary">
+                {% if path2 %}
+                    <a href="/story/{{ path2 }}">{{ path2_sentence }}</a>
+                {% else %}
+                    <form action="/create_story" method="POST">
+                        <input type="hidden" name="path" value="2">
+                        <input type ="hidden" name="current_story_id" value="{{ current_story_id }}">
+                        <input id="path2" name="sentence" class="form-control" type="text" placeholder="Enter Path 2 Story">
+                        <input type="submit" class="btn btn-outline-primary">
+                    </form>
+                {% endif %}
             </td>
         </tr>
         <tr>
             <td></td>
             <td>
-                <input id="path3" class="form-control" type="text" placeholder="Enter Path 3 Story">
-                <input type="submit" class="btn btn-outline-primary">
+                {% if path3 %}
+                    <a href="/story/{{ path3 }}">{{ path3_sentence }}</a>
+                {% else %}
+                    <form action="/create_story" method="POST">
+                        <input type="hidden" name="path" value="3">
+                        <input type ="hidden" name="current_story_id" value="{{ current_story_id }}">
+                        <input id="path3" name="sentence" class="form-control" type="text" placeholder="Enter Path 3 Story">
+                        <input type="submit" class="btn btn-outline-primary">
+                    </form>
+                {% endif %}
             </td>
             <td></td>
         </tr>
